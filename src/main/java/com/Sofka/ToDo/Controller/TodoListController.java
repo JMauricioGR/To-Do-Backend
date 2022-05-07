@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/")
+@CrossOrigin(origins = "http://localhost:3000/")
 public class TodoListController {
 
     @Autowired
@@ -20,7 +21,7 @@ public class TodoListController {
     }
 
     @PostMapping("save/todo")
-    public Todolist saveTodo(@RequestBody Todolist todo{
+    public Todolist saveTodo(@RequestBody Todolist todo){
         return serviceTodo.saveTodolist(todo);
     }
 

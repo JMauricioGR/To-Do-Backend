@@ -3,9 +3,11 @@ package com.Sofka.ToDo.Service;
 import com.Sofka.ToDo.Entity.Todolist;
 import com.Sofka.ToDo.Repository.TodoListRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class TodoListService implements TodoListServiceInterface{
 
     @Autowired

@@ -4,28 +4,27 @@ import com.Sofka.ToDo.Entity.Categorylist;
 import com.Sofka.ToDo.Service.CategoryListServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import java.util.List
-
-import javax.persistence.Entity;
 import java.util.List;
+
 
 @RestController
 @RequestMapping("api/v1/")
+@CrossOrigin(origins = "http://localhost:3000/")
 public class CategoryListController {
     @Autowired
     private CategoryListServiceInterface serviceCategory;
 
     @GetMapping("get/categories")
     public List<Categorylist> getAllBooks(){
-        return serviceCategory.getAllCategorylist()
+        return serviceCategory.getAllCategorylist();
     }
 
-    @PostMapping("save/book")
+    @PostMapping("save/category")
     public Categorylist saveBook(@RequestBody Categorylist category){
-        return serviceCategory.saveCategorylist(category)
+        return serviceCategory.saveCategorylist(category);
     }
 
-    @DeleteMapping("delete/book/{id}")
+    @DeleteMapping("delete/category/{id}")
     public void deleteBook(@PathVariable Long id){
         serviceCategory.deleteCategorylist(id);
     }

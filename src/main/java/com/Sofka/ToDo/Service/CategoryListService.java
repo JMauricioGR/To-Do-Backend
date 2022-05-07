@@ -24,10 +24,6 @@ public class CategoryListService implements CategoryListServiceInterface {
     }
 
     @Override
-    public Categorylist updateBook(Categorylist category) {
-        return categoryListRepository.save(category);
-    }
-    @Override
     public void deleteCategorylist(Long id) {
         categoryListRepository.deleteById(id);
     }
