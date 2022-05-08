@@ -11,4 +11,5 @@ public class Todolist {
     private Long id;
     private String todo;
     private Boolean done;
+    private String category;
 }
