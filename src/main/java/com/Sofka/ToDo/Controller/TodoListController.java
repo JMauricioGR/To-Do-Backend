@@ -1,6 +1,8 @@
 package com.Sofka.ToDo.Controller;
 
+import com.Sofka.ToDo.DTO.ToDoCategoryDTO;
 import com.Sofka.ToDo.Entity.Todolist;
+import com.Sofka.ToDo.Service.TodoListService;
 import com.Sofka.ToDo.Service.TodoListServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +17,15 @@ public class TodoListController {
     @Autowired
     private TodoListServiceInterface serviceTodo;
 
+    @Autowired
+    private TodoListService todoListService;
+
     @GetMapping("get/todos")
+    public List<ToDoCategoryDTO> getAllTodosCategories(){
+        return todoListService.getAllTodosCategories();
+    }
+
+    @GetMapping("get/todoslist")
     public List<Todolist> getAllTodolist(){
         return serviceTodo.getAllTodolist();
     }
